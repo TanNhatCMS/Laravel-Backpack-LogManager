@@ -40,7 +40,7 @@ class LogManagerServiceProvider extends ServiceProvider
     {
         $router->group(['namespace' => 'Backpack\LogManager\app\Http\Controllers'], function ($router) {
             // Admin Interface Routes
-            Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function () {
+            Route::group(['middleware' => ['web', 'auth'], 'prefix' => config('backpack.base.route_prefix', 'admin')], function () {
                 // Logs
                 Route::get('log', 'LogController@index');
                 Route::get('log/preview/{file_name}', 'LogController@preview');

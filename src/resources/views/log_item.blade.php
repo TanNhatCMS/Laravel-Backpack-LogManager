@@ -6,8 +6,8 @@
 	    {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
 	  </h1>
 	  <ol class="breadcrumb">
-	    <li><a href="{{ url('admin') }}">{{ config('base.project_name') }}</a></li>
-      <li><a href="{{ url('admin/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
+	    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin')) }}">{{ config('base.project_name') }}</a></li>
+      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
       <li class="active">{{ trans('backpack::logmanager.preview') }}</li>
 	  </ol>
 	</section>
@@ -15,7 +15,7 @@
 
 @section('content')
 
-  <a href="{{ url('admin/log') }}"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::logmanager.back_to_all_logs') }}</a><br><br>
+  <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::logmanager.back_to_all_logs') }}</a><br><br>
 <!-- Default box -->
   <div class="box">
     <div class="box-body">

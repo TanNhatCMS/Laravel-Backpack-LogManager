@@ -6,8 +6,8 @@
         {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url('admin') }}">{{ config('base.project_name') }}</a></li>
-        <li><a href="{{ url('admin/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
+        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin')) }}">{{ config('base.project_name') }}</a></li>
+        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
         <li class="active">{{ trans('backpack::logmanager.existing_logs') }}</li>
       </ol>
     </section>
@@ -35,9 +35,9 @@
             <td>{{ \Carbon\Carbon::createFromTimeStamp($log['last_modified'])->formatLocalized('%H:%M') }}</td>
             <td class="text-right">{{ round((int)$log['file_size']/1048576, 2).' MB' }}</td>
             <td>
-                <a class="btn btn-xs btn-default" href="{{ url('admin/log/preview/'.$log['file_name']) }}"><i class="fa fa-eye"></i> {{ trans('backpack::logmanager.preview') }}</a>
-                <a class="btn btn-xs btn-default" href="{{ url('admin/log/download/'.$log['file_name']) }}"><i class="fa fa-cloud-download"></i> {{ trans('backpack::logmanager.download') }}</a>
-                <a class="btn btn-xs btn-danger" data-button-type="delete" href="{{ url('admin/log/delete/'.$log['file_name']) }}"><i class="fa fa-trash-o"></i> {{ trans('backpack::logmanager.delete') }}</a>
+                <a class="btn btn-xs btn-default" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/preview/'.$log['file_name']) }}"><i class="fa fa-eye"></i> {{ trans('backpack::logmanager.preview') }}</a>
+                <a class="btn btn-xs btn-default" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/download/'.$log['file_name']) }}"><i class="fa fa-cloud-download"></i> {{ trans('backpack::logmanager.download') }}</a>
+                <a class="btn btn-xs btn-danger" data-button-type="delete" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/delete/'.$log['file_name']) }}"><i class="fa fa-trash-o"></i> {{ trans('backpack::logmanager.delete') }}</a>
             </td>
           </tr>
           @endforeach
