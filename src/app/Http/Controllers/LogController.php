@@ -2,7 +2,7 @@
 
 namespace Backpack\LogManager\app\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Storage;
 
 class LogController extends Controller
