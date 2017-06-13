@@ -27,7 +27,7 @@ return [
       'preview'                     => 'Preview',
       'delete_cancel_message'       => 'The log file has NOT been deleted.',
       'delete_error_message'        => 'The log file has NOT been deleted.',
-      'delete_confirmation_message' => 'The log was file deleted.',
+      'delete_confirmation_message' => 'The log file was deleted.',
       'log_file_doesnt_exist'       => "The log file doesn't exist.",
 
 ];
