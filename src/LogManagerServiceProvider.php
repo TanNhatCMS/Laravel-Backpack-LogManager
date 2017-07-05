@@ -63,7 +63,9 @@ class LogManagerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerLogManager();
-        $this->setupRoutes($this->app->router);
+        if(!config('backpack.base.skip_all_backpack_routes',false)){
+            $this->setupRoutes($this->app->router);            
+        }
     }
 
     private function registerLogManager()
