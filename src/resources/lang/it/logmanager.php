@@ -21,7 +21,7 @@ return [
       'delete_error_title'          => 'Errore',
       'existing_logs'               => 'Log esistenti',
       'file_size'                   => 'Dimensione file',
-      'delete_cancel_title'         => 'It&#039;s ok',
+      'delete_cancel_title'         => 'Tutto a posto',
       'last_modified'               => 'Ultima modifica',
       'logs'                        => 'Log',
       'preview'                     => 'Anteprima',
