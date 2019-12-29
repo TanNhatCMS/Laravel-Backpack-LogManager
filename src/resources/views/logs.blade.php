@@ -76,7 +76,7 @@
                     delete_button.parentsUntil('tr').parent().remove();
 
                     // Show an alert with the result
-                    new PNotify({
+                    new Noty({
                         title: "{{ trans('backpack::logmanager.delete_confirmation_title') }}",
                         text: "{{ trans('backpack::logmanager.delete_confirmation_message') }}",
                         type: "success"
@@ -84,7 +84,7 @@
                 },
                 error: function(result) {
                     // Show an alert with the result
-                    new PNotify({
+                    new Noty({
                         title: "{{ trans('backpack::logmanager.delete_error_title') }}",
                         text: "{{ trans('backpack::logmanager.delete_error_message') }}",
                         type: "warning"
@@ -92,7 +92,7 @@
                 }
             });
         } else {
-            new PNotify({
+            new Noty({
                 title: "{{ trans('backpack::logmanager.delete_cancel_title') }}",
                 text: "{{ trans('backpack::logmanager.delete_cancel_message') }}",
                 type: "info"
