@@ -77,26 +77,23 @@
 
                     // Show an alert with the result
                     new Noty({
-                        title: "{{ trans('backpack::logmanager.delete_confirmation_title') }}",
-                        text: "{{ trans('backpack::logmanager.delete_confirmation_message') }}",
+                        text: "<strong>{{ trans('backpack::logmanager.delete_confirmation_title') }}</strong><br>{{ trans('backpack::logmanager.delete_confirmation_message') }}",
                         type: "success"
-                    });
+                    }).show();
                 },
                 error: function(result) {
                     // Show an alert with the result
                     new Noty({
-                        title: "{{ trans('backpack::logmanager.delete_error_title') }}",
-                        text: "{{ trans('backpack::logmanager.delete_error_message') }}",
+                        text: "<strong>{{ trans('backpack::logmanager.delete_error_title') }}</strong><br>{{ trans('backpack::logmanager.delete_error_message') }}",
                         type: "warning"
-                    });
+                    }).show();
                 }
             });
         } else {
             new Noty({
-                title: "{{ trans('backpack::logmanager.delete_cancel_title') }}",
-                text: "{{ trans('backpack::logmanager.delete_cancel_message') }}",
+                text: "<strong>{{ trans('backpack::logmanager.delete_cancel_title') }}</strong><br>{{ trans('backpack::logmanager.delete_cancel_message') }}",
                 type: "info"
-            });
+            }).show();
         }
       });
 

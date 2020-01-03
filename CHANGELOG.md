@@ -4,6 +4,12 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [3.0.2] - 2020-01-03
+
+### Fixed
+- merged #34 - notification bubbles were using Backpack v3 syntax so they didn't show;
+
+
 ## [3.0.1] - 2019-12-19
 
 ### Added
