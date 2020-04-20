@@ -42,7 +42,20 @@
             <td>
                 <a class="btn btn-sm btn-link" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/preview/'. encrypt($file['file_name'])) }}"><i class="fa fa-eye"></i> {{ trans('backpack::logmanager.preview') }}</a>
                 <a class="btn btn-sm btn-link" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/download/'.encrypt($file['file_name'])) }}"><i class="fa fa-cloud-download"></i> {{ trans('backpack::logmanager.download') }}</a>
-                <a class="btn btn-sm btn-link" data-button-type="delete" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/delete/'.encrypt($file['file_name'])) }}"><i class="fa fa-trash-o"></i> {{ trans('backpack::logmanager.delete') }}</a>
+                <a class="btn btn-sm btn-link" data-button-type="delete"
+                   onClick="
+                       event.preventDefault();
+                       if(confirm('Do you really want to delete>')){
+                       document.getElementById('form-{{ $key }}').submit()
+                       }"
+                   href=""><i class="fa fa-trash-o"></i> {{ trans('backpack::logmanager.delete') }}</a>
+                <form
+                    action="{{ url(config('backpack.base.route_prefix', 'admin').'/log/delete/'.encrypt($file['file_name'])) }}"
+                    method="post"
+                    id="form-{{ $key }}">
+                    @csrf
+                    @method('delete')
+                </form>
             </td>
           </tr>
           @endforeach
