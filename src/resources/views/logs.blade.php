@@ -40,7 +40,7 @@
             <th scope="row">{{ $key + 1 }}</th>
             <td>{{ $file['file_name'] }}</td>
             <td>{{ \Carbon\Carbon::createFromTimeStamp($file['last_modified'])->isoFormat(config('backpack.logmanager.date_format') ?: config('backpack.base.default_date_format', 'D MMM YYYY')) }}</td>
-            <td>{{ \Carbon\Carbon::createFromTimeStamp($file['last_modified'])->isoFormat('HH:mm') }}</td>
+            <td>{{ \Carbon\Carbon::createFromTimeStamp($file['last_modified'], date_default_timezone_get())->isoFormat('HH:mm') }}</td>
             <td class="text-right">{{ round((int)$file['file_size']/1048576, 2).' MB' }}</td>
             <td>
                 <a class="btn btn-sm btn-link" href="{{ route('log.show', encrypt($file['file_name'])) }}"><i class="la la-eye"></i> {{ trans('backpack::logmanager.preview') }}</a>
