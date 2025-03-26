@@ -19,7 +19,7 @@ class LogManagerServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public $routeFilePath = '/routes/backpack/logmanager.php';
+    public $routeFilePath = '/routes/logmanager.php';
 
     /**
      * Perform post-registration booting of services.
